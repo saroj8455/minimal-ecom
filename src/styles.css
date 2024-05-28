@@ -161,17 +161,18 @@ p-button {
 /* sidebar ,main and footer layout */
 .page__container {
   display: flex;
-  gap: 1rem;
+  /* gap: 1rem; */
   align-items: start;
 }
 
 aside {
   /* flex: 0 0 20%; responsive way to make sidebar width */
-  flex: 0 0 20%;
+  flex: 0 0 2%;
   height: 100dvh;
-  position: sticky;
-  top: 0;
+  min-width: 250px;
+  /* position: sticky; */
+  /* top: 0; */
 
-  padding: 1rem;
+  /* padding: 1rem; */
   background-color: pink;
 }
