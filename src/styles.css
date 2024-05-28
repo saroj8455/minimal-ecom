@@ -170,9 +170,9 @@ aside {
   flex: 0 0 2%;
   height: 100dvh;
   min-width: 250px;
-  /* position: sticky; */
-  /* top: 0; */
+  position: sticky;
+  top: 0;
 
-  /* padding: 1rem; */
+  padding: 1rem;
   background-color: pink;
 }
