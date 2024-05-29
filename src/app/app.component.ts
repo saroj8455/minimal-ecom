@@ -41,12 +41,12 @@ export class AppComponent implements OnInit {
         icon: 'pi pi-palette',
         items: [
           {
-            label: 'Installation',
+            label: 'Home',
             icon: 'pi pi-eraser',
-            route: '/installation',
+            route: '/home',
           },
           {
-            label: 'Booking Request',
+            label: 'About Booking',
             icon: 'pi pi-heart',
             route: '/about',
           },
