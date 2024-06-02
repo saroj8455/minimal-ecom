@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -8,7 +9,13 @@ export class CacheService {
   // BehaviorSubject that will contain the updated cache data.
   public cache$ = new BehaviorSubject<any>(null);
 
-  constructor() {}
+  private cachingInfo = new Map<string, any[]>();
+
+  constructor(private httpClient: HttpClient) {}
+
+  products(url: string) {
+    return this.httpClient.get(url);
+  }
 
   alert() {
     alert('hello');

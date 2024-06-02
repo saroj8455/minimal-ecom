@@ -14,19 +14,23 @@ import { AsyncPipe } from '@angular/common';
 export class AboutComponent implements OnInit, OnDestroy {
   cacheSubscription!: Subscription;
   data: any;
+  apiUrl = 'https://fakestoreapi.com/products';
 
-  constructor(private ch: CacheService) {}
+  constructor(private cacheService: CacheService) {}
   ngOnInit(): void {
     console.log('about called');
     // this.ch.alert();
 
-    this.ch.set('Hello World App');
-    this.cacheSubscription = this.ch.cache$.subscribe((data) => {
+    // make api call for data
+    this.cacheService.products(this.apiUrl);
+
+    this.cacheService.set('Hello World App');
+    this.cacheSubscription = this.cacheService.cache$.subscribe((data) => {
       this.data = data;
     });
 
-    this.ch.cache$.subscribe((data) => {
-      console.log(data);
+    this.cacheService.cache$.subscribe((data) => {
+      // console.log(data);
     });
   }
 
